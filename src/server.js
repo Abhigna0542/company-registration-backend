@@ -28,9 +28,13 @@ if (!fs.existsSync(uploadsDir)) {
   console.log('✅ Created uploads directory');
 }
 
-// CORS configuration
+// Update your CORS configuration
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+  origin: [
+    'http://localhost:5173', 
+    'http://127.0.0.1:5173',
+    'https://your-frontend-domain.onrender.com' // ADD YOUR FRONTEND URL HERE
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
